@@ -2,6 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
+	"go_demo_test/controller"
 	"net/http"
 )
 
@@ -10,6 +11,7 @@ func Router() *gin.Engine {
 
 	user := r.Group("/user")
 	{
+		user.GET("/info", controller.GetUserInfo)
 		user.POST("/list", func(c *gin.Context) {
 			c.String(http.StatusOK, "user list")
 		})
