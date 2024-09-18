@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"go_demo_test/router"
+)
 
 func main() {
-	fmt.Println("hello ,world")
+	r := router.Router()
+
+	// 启动HTTP服务，监听在8080端口
+	r.Run(":8080")
 }
